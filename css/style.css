@@ -96,7 +96,18 @@ header{
   color: #fff;
   background-color: var(--main-color);
 }
-
+button[aria-expanded="true"] > span {
+  position: relative;
+  display: none;
+}
+ 
+button[aria-expanded="true"]::after {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-size: 28px;
+  content: "X";
+}
 /* --------------------------------
  * Top
  * -------------------------------- */
@@ -261,18 +272,95 @@ header{
 /* --------------------------------
  * WORK
  * -------------------------------- */
-#work {
-  padding: 100px 0;
-  max-width: 1100px;
-  margin: 0 auto;
+#work{
+  padding: 100px 20px;
   width: 100%;
 }
+
+#work-content{
+  margin: 100px 20px;
+}
+
+.work-content{
+  margin-bottom: 50px ;
+}
+
+.work-content__item dt{
+  font-size: 20px;
+}
+
+.work-content__item dd{
+  margin-bottom: 30px;
+}
+
+.work-content .show-page{
+  margin-bottom: 0;
+}
+
+.work-list h2{
+  margin-bottom: 20px;
+}
+
+.gallery{
+  width: 100%;
+  height: 100%;
+}
+
+.gallery-image{
+  width: 100%;
+  height: 100%;
+  margin: 20px auto;
+  position: relative;
+}
+
+.gallery-image a{
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+}
+
+.gallery-image a::before{
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  opacity: 0;
+  background-color: #000;
+  z-index: 10;
+}
+
+.gallery-image a:hover::before{
+  opacity: .7;
+}
+
 .gallery-image img{
   width: 100%;
 }
 
+.gallery-image span{
+  content: "";
+  position: absolute;
+  width: 100%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  opacity: 0;
+  z-index: 10;
+  color: #fff;
+  font-weight: 600;
+  font-size: 20px;
+}
+
+.gallery-image a:hover span{
+  opacity: 1;
+}
+
 /* --------------------------------
- * mind
+ * Mind
  * -------------------------------- */
 #mind{
   padding: 100px 20px;
@@ -364,7 +452,7 @@ footer p{
 
   .top-caption .btn{
     position: absolute;
-    top: 53%;
+    top: 60%;
     left: 50%;
     transform: translate(-50%, -53%);
     z-index: 20;
@@ -386,7 +474,6 @@ footer p{
   .top-contens p{
     font-size: 50px;
   }
-
 
   /* --------------------------------
   * SKILL
@@ -413,13 +500,42 @@ footer p{
   /* --------------------------------
   * WORK
   * -------------------------------- */
-  .gallery-images{
-    display: flex;
-    justify-content: space-between;
+  #work-content{
+    margin: 100px 50px;
+  }
+
+  #work-content dt{
+    font-size: 24px;
+  }
+
+  #work-content dd{
+    font-size: 20px;
+  }
+
+  .gallery{
+    display: grid;
+    grid-template-columns: 20px 1fr 1fr 20px;
+    grid-gap: 20px;
+  }
+
+  .gallery-image {
+    margin: 0 auto;
+  }
+
+  .gallery-image:nth-child(odd){
+    grid-column: 2/3;
+  }
+
+  .gallery-image:nth-child(even){
+    grid-column: 3/4;
+  }
+
+  .gallery-image img{
+    width: 100%;
   }
 
   /* --------------------------------
-  * mind
+  * Mind
   * -------------------------------- */
   .mind-contens li{
     font-size: 24px;
@@ -464,16 +580,22 @@ footer p{
   * -------------------------------- */
   .top-caption h1{
     font-size: 54px;
-    top: 40%;
+    top: 35%;
     left: 50%;
     transform: translate(-50%, 40%);
   }
 
   .top-caption .btn{
-    top: 60%;
+    top: 65%;
     left: 50%;
     transform: translate(-50%, -60%);
     font-size: 32px;
+  }
+  /* --------------------------------
+  * Work
+  * -------------------------------- */
+  #work-content{
+    margin: 100px 140px;
   }
 }
   /* ==== PC版 (大) ここまで==== */

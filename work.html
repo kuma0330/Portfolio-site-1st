@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>ポートフォリオサイト</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
+  <link href="css/all.css" rel="stylesheet">
+  <link href="css/style.css" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+</head>
+<body data-spy="scroll" data-target="#navbarResponsive">
+  <header id="home">
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+      <a href="index.html" class="navbar-brand"><img src="img/icon_badminton.jpg" alt=""></a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      
+      <div class="navbar-collapse collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a href="index.html" class="nav-link active">home</a>
+          </li>
+          <li class="nav-item">
+            <a href="#profile" class="nav-link">profile</a>
+          </li>
+          <li class="nav-item">
+            <a href="#skill" class="nav-link">skill</a>
+          </li>
+          <li class="nav-item">
+            <a href="#work" class="nav-link">work</a>
+          </li>
+          <li class="nav-item">
+            <a href="#mind" class="nav-link">mind</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </header>  
+  <main id="work-content">
+    <h2>WORK</h2>
+    <section class="work-content">
+      <div class="work-content__info">
+        <dl class="work-content__item">
+          <dt>タイトル</dt>
+          <dd data-work="title"></dd>
+          <dt>概要</dt>
+          <dd data-work="overview"></dd>
+          <dt>特徴</dt>
+          <dd data-work="feature-1"></dd>
+          <dd data-work="feature-2"></dd>
+          <dt>技術</dt>
+          <dd data-work="lang"></dd>
+          <dt>作成期間</dt>
+          <dd data-work="period"></dd>
+          <dt>Souce Code</dt>
+          <dd><a href="#" id="show-github" data-work="souce-code"></a></dd>
+          <dt data-work="show-text"></dt>
+          <dd class="show-page"><a href="#" id="show-page-link" data-work="show-page"></a></dd>
+          <dd data-work="comment"></dd>
+        </dl>
+      </div>
+    </section>
+    <section class="work-list">
+      <h2>WORK一覧</h2>
+      <div class="gallery">
+        <div class="gallery-image">
+          <a href="work.html?id=1">
+            <img src="img/sweet-shop-1.jpg" alt="">
+            <span>お菓子屋仮想サイト</span>
+          </a>
+        </div>
+        <div class="gallery-image">
+          <a href="work.html?id=2">
+            <img src="img/manufacturer-company.jpg" alt="">
+            <span>電子部品会社仮想サイト</span>
+          </a>
+        </div>
+        <div class="gallery-image">
+          <a href="work.html?id=3">
+            <img src="img/registration-1.jpg" alt="">
+            <span>電子部品会社の商品登録ページ</span>
+          </a>
+        </div>
+        <div class="gallery-image">
+          <a href="work.html?id=4">
+            <img src="img/products-order-1.jpg" alt="">
+            <span>電子部品会社の商品注文ページ</span>
+          </a>
+        </div>
+        <div class="gallery-image">
+          <a href="work.html?id=5">
+            <img src="img/order-confirmation-1.jpg" alt="">
+            <span>電子部品会社の注文内容確認ページ</span>
+          </a>
+        </div>
+        <div class="gallery-image">
+          <a href="work.html?id=6">
+            <img src="img/clinic-1.jpg" alt="">
+            <span>クリニック仮想サイト</span>
+          </a>
+        </div>
+        <div class="gallery-image">
+          <a href="./work.html?id=7">
+            <img src="img/construction- company-1.jpg" alt="">
+            <span>建築会社仮想サイト</span>
+          </a>
+        </div>
+        <div class="gallery-image">
+          <a href="work.html?id=8">
+            <img src="img/portfolio-site-1.jpg" alt="">
+            <span>ポートフォリオサイト</span>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer>
+    <p>©2020 KUMASAKA</p>
+  </footer>
+  <script src="js/master.js"></script> 
+  <script src="js/main.js"></script> 
+</body>
+</html>

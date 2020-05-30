@@ -13,33 +13,23 @@ $(function(){
 });
 
 /* --------------------------------
- * フィルター
+ * 製品紹介のページ遷移
  * -------------------------------- */
-$(function() {
-    const $filters = $('.filter [data-filter]'),
-          $boxes = $('.boxes [data]');
-  
-    $filters.on('click', function(e) {
-      e.preventDefault();
-     
-      
-      $filters.removeClass('active');
-      $(this).addClass('active');
-  
-      const $filterData = $(this).attr('data-filter');
-  
-      if ($filterData == 'all') {
-        $boxes.removeClass('is-animated')
-          .fadeOut().promise().done(function() {
-            $boxes.addClass('is-animated').fadeIn();
-          });
-      } else {
-        $boxes.removeClass('is-animated')
-          .fadeOut().promise().done(function() {
-            $boxes.filter('[data = "' + $filterData + '"]')
-              .addClass('is-animated').fadeIn();
-          });
-      }
-    });
-});
+$(function(){
+	if($('main').attr('id') === 'work-content'){
+		$('[data-work]').each(function(index, el) {
+			let work_id = location.search.replace('?id=', ''), 
+         work_key = $(this).attr('data-work'),
+		     add_text = work[work_id - 1][work_key];
+
+      $(this).text(add_text);
+
+      if(work_key == "souce-code"){
+        $('#show-github').attr("href", add_text);
+      }else{
+        $('#show-page-link').attr("href", add_text);
+      };
+		});
+	};
+})
 
