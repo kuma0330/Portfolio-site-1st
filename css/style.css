@@ -71,6 +71,9 @@ header{
   background: #000 !important;
   padding: 0 15px;
   z-index: 100;
+  opacity: 0;
+  animation: fadeDown .5s forwards;
+  animation-delay: 1s;
 }
 .navbar-collapse{
   height: 100%;
@@ -96,6 +99,7 @@ header{
   color: #fff;
   background-color: var(--main-color);
 }
+
 button[aria-expanded="true"] > span {
   position: relative;
   display: none;
@@ -108,12 +112,13 @@ button[aria-expanded="true"]::after {
   font-size: 28px;
   content: "X";
 }
+
 /* --------------------------------
  * Top
  * -------------------------------- */
 #top{
-  background-image: url(../img/top.jpg);
-  background-position: center center;
+  background-image: url(../img/profile-image-min.jpg);
+  background-position: center left;
   background-size: cover;
   background-repeat: no-repeat;
   height: 100vh;
@@ -144,42 +149,57 @@ button[aria-expanded="true"]::after {
 
 .home-inner::before{
   position: absolute;
-  content: ' ';
+  content: '';
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: rgba(0,0,0,.6);
+  background-color: rgba(0,0,0,.5);
   z-index: 10;
+}
+
+.top-caption{
+  position: absolute;
+  text-align: center;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 50;
+  width: 100%;
 }
 
 .top-caption h1{
   color: #fff;
-  position: absolute;
   text-shadow: 0 0 10px #000;
   font-size: 28px;
-  width: 75%;
-  top: 45%;
-  left: 50%;
-  transform: translate(-50%, -45%);
-  z-index: 20;
   font-weight: bold;
   text-shadow: 0 0 10px #444444;
   line-height: 1.5;
+  opacity: 0;
+  animation: fadeUp .5s forwards;
+  animation-delay: .5s;
 }
 
 .top-caption .btn{
   color: #fff;
-  position: absolute;
-  top: 55%;
-  left: 50%;
-  transform: translate(-50%, -55%);
-  z-index: 20;
   font-weight: bold;
   border: 2px solid #fff;
   border-radius: 10px;
-  padding: 10px 20px;
+  padding: 10px 15px;
+  opacity: 0;
+  animation: fadeDown .5s forwards;
+  animation-delay: .5s;
 }
+
+.top-caption .btn:hover{
+  color: #000;
+  border: 2px solid #000;
+  border-radius: 10px;
+  padding: 10px 15px;
+  opacity: 0;
+  background: #fff;
+}
+
 
 /* --------------------------------
  * PROFILE
@@ -190,6 +210,7 @@ button[aria-expanded="true"]::after {
   margin-left: auto;
   width: 100%;
 }
+
 .profile-contents{
   margin: 0 20px;
 }
@@ -201,6 +222,7 @@ button[aria-expanded="true"]::after {
 .table{
   margin: 0 auto;
 }
+
 .table tr{
   border-top:1px dotted #000000;
 }
@@ -365,7 +387,7 @@ button[aria-expanded="true"]::after {
 #mind{
   padding: 100px 20px;
   color: #fff;
-  background-image: url(../img/top.jpg);
+  background-image: url(../img/mind.jpg);
   background-position: center center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -443,21 +465,12 @@ footer p{
   * Top
   * -------------------------------- */
   .top-caption h1{ 
-    width: 100%;
-    font-size: 48px;
-    top: 35%;
-    left: 50%;
-    transform: translate(-50%, 35%);
+    font-size: 36px;
   }
 
   .top-caption .btn{
-    position: absolute;
-    top: 60%;
-    left: 50%;
-    transform: translate(-50%, -53%);
-    z-index: 20;
     font-weight: bold;
-    font-size: 24px;
+    font-size: 20px;
   }
 
   /* --------------------------------
@@ -566,6 +579,7 @@ footer p{
   .navbar-dark .navbar-nav .nav-link{
     padding: 0 40px;
   }
+
   .navbar{
     background-color: #000;
     text-transform: uppercase;
@@ -575,22 +589,18 @@ footer p{
     background: #000 !important;
     padding: 0 15px;
   }
+
   /* --------------------------------
   * Top
   * -------------------------------- */
   .top-caption h1{
-    font-size: 54px;
-    top: 35%;
-    left: 50%;
-    transform: translate(-50%, 40%);
+    font-size: 48px;
   }
 
   .top-caption .btn{
-    top: 65%;
-    left: 50%;
-    transform: translate(-50%, -60%);
-    font-size: 32px;
+    font-size: 28px;
   }
+
   /* --------------------------------
   * Work
   * -------------------------------- */
@@ -599,4 +609,23 @@ footer p{
   }
 }
   /* ==== PC版 (大) ここまで==== */
+  /* Animation */
+  @keyframes fadeUp{
+    0%{
+      transform: translateY(20px);
+    }
+    100%{
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
 
+  @keyframes fadeDown{
+    0%{
+      transform: translateY(-20px);
+    }
+    100%{
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
