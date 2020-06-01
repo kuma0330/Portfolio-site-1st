@@ -6,9 +6,9 @@ const work = [
       "feature-2": "また、こだわりセクションでは、スクロールをトリガーにして時間差でアニメーションをスタートさせるために、GSAPを取り入れました。",
       "lang": "HTML5/CSS3、jQuery、GSAP",
       "period": "3日",
-      "souce-code": "https://github.com/kuma9732/sweet-site",
+      "souce-code": "https://github.com/kuma9732/sweets-site",
       "show-text":"Show Page",
-      "show-page":"https://kuma9732.github.io/sweet-site",
+      "show-page":"https://kuma9732.github.io/sweets-site",
       "comment":"",
     },
     {
